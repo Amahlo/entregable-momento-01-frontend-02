@@ -1,0 +1,202 @@
+.despensa-buscador-contenedor {
+  position: relative;
+  width: 100%;
+  max-width: 36rem;
+}
+
+.despensa-buscador-label {
+  display: block;
+  margin-bottom: 0.45rem;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--sazon-verdeNutresa);
+}
+
+.dark .despensa-buscador-label {
+  color: var(--sazon-marfil);
+}
+
+.despensa-buscador-campo {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.despensa-buscador-icono {
+  position: absolute;
+  left: 0.95rem;
+  color: var(--sazon-verdeHoja);
+  font-size: 0.95rem;
+  pointer-events: none;
+}
+
+.dark .despensa-buscador-icono {
+  color: var(--sazon-verdeNeon);
+}
+
+.despensa-buscador-input {
+  width: 100%;
+  padding: 0.7rem 2.5rem 0.7rem 2.6rem;
+  border-radius: 0.85rem;
+  border: 1.5px solid rgba(61, 142, 51, 0.35);
+  background-color: #ffffff;
+  color: var(--sazon-texto);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.despensa-buscador-input::placeholder {
+  color: var(--sazon-texto2);
+  opacity: 0.75;
+}
+
+.despensa-buscador-input:focus {
+  border-color: var(--sazon-verdeHoja);
+  box-shadow: 0 0 0 3px rgba(61, 142, 51, 0.18);
+}
+
+.dark .despensa-buscador-input {
+  background-color: var(--sazon-verdeNutresaCard);
+  border-color: rgba(102, 209, 73, 0.35);
+  color: var(--sazon-marfil);
+}
+
+.dark .despensa-buscador-input::placeholder {
+  color: rgba(244, 244, 232, 0.55);
+}
+
+.dark .despensa-buscador-input:focus {
+  border-color: var(--sazon-verdeNeon);
+  box-shadow: 0 0 0 3px rgba(102, 209, 73, 0.2);
+}
+
+.despensa-buscador-limpiar {
+  position: absolute;
+  right: 0.75rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.65rem;
+  height: 1.65rem;
+  border: none;
+  border-radius: 9999px;
+  background-color: rgba(61, 142, 51, 0.12);
+  color: var(--sazon-verdeHondo);
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.despensa-buscador-limpiar:hover {
+  background-color: var(--sazon-verdeHoja);
+  color: #ffffff;
+}
+
+.dark .despensa-buscador-limpiar {
+  background-color: rgba(102, 209, 73, 0.16);
+  color: var(--sazon-verdeNeon);
+}
+
+.dark .despensa-buscador-limpiar:hover {
+  background-color: var(--sazon-verdeNeon);
+  color: var(--sazon-verdeNoche);
+}
+
+.despensa-buscador-lista {
+  position: absolute;
+  top: calc(100% + 0.45rem);
+  left: 0;
+  right: 0;
+  z-index: 30;
+  margin: 0;
+  padding: 0.4rem;
+  list-style: none;
+  max-height: 17rem;
+  overflow-y: auto;
+  border-radius: 0.95rem;
+  border: 1px solid rgba(61, 142, 51, 0.28);
+  background-color: #ffffff;
+  box-shadow: 0 16px 32px -10px rgba(17, 70, 34, 0.18);
+}
+
+.dark .despensa-buscador-lista {
+  background-color: var(--sazon-verdeNutresaCard);
+  border-color: rgba(102, 209, 73, 0.3);
+  box-shadow: 0 18px 36px -10px rgba(0, 0, 0, 0.45);
+}
+
+.despensa-buscador-item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.65rem 0.85rem;
+  border: none;
+  border-radius: 0.65rem;
+  background: transparent;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.despensa-buscador-item:hover {
+  background-color: var(--sazon-marfil);
+}
+
+.dark .despensa-buscador-item:hover {
+  background-color: var(--sazon-verdeNutresa);
+}
+
+.despensa-buscador-item-nombre {
+  display: block;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--sazon-texto);
+}
+
+.dark .despensa-buscador-item-nombre {
+  color: var(--sazon-marfil);
+}
+
+.despensa-buscador-item-categoria {
+  display: block;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
+  color: var(--sazon-texto2);
+}
+
+.dark .despensa-buscador-item-categoria {
+  color: rgba(244, 244, 232, 0.7);
+}
+
+.despensa-buscador-item-marca {
+  flex-shrink: 0;
+  padding: 0.2rem 0.55rem;
+  border-radius: 9999px;
+  background-color: rgba(61, 142, 51, 0.12);
+  color: var(--sazon-verdeHondo);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.7rem;
+  font-weight: 600;
+}
+
+.dark .despensa-buscador-item-marca {
+  background-color: rgba(102, 209, 73, 0.16);
+  color: var(--sazon-verdeNeon);
+}
+
+.despensa-buscador-estado {
+  padding: 0.85rem 1rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  color: var(--sazon-texto2);
+  text-align: center;
+}
+
+.dark .despensa-buscador-estado {
+  color: rgba(244, 244, 232, 0.75);
+}
