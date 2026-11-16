@@ -23,10 +23,54 @@ const INGREDIENTES = [
   { id: 22, nombre: 'Tomate Chonto Maduro', categoria: 'Verduras y Hortalizas', marca: 'General' }
 ]
 
+const EQUIVALENCIAS = {
+  tinto: 'Café Molido Sello Rojo',
+  cafecito: 'Café Molido Sello Rojo',
+  'cafe negro': 'Café Molido Sello Rojo',
+  galletas: 'Galletas Saltín Noel',
+  saltinas: 'Galletas Saltín Noel',
+  soda: 'Galletas Saltín Noel',
+  lata: 'Atún en Agua Van Camps',
+  lomitos: 'Atún en Agua Van Camps',
+  'atun en lata': 'Atún en Agua Van Camps',
+  pasta: 'Espagueti Clásico Doria',
+  fideos: 'Espagueti Clásico Doria',
+  tallarines: 'Espagueti Clásico Doria',
+  harina: 'Harina de Maíz Precocida',
+  arepa: 'Harina de Maíz Precocida',
+  masarepa: 'Harina de Maíz Precocida',
+  cacao: 'Chocolate de Mesa Corona',
+  pastilla: 'Chocolate de Mesa Corona',
+  pollo: 'Pechuga de Pollo',
+  pechuga: 'Pechuga de Pollo',
+  'filete de pollo': 'Pechuga de Pollo',
+  tajadas: 'Plátano Maduro',
+  maduro: 'Plátano Maduro',
+  nata: 'Crema de Leche',
+  'crema lactea': 'Crema de Leche',
+  diente: 'Ajo Fresco',
+  espiga: 'Orégano Seco',
+  jitomate: 'Tomate Chonto Maduro',
+  tomate: 'Tomate Chonto Maduro',
+  choclo: 'Maíz Tierno Dulce Zenú',
+  elote: 'Maíz Tierno Dulce Zenú',
+  caraota: 'Frijol Cargamanto Rojo',
+  frijoles: 'Frijol Cargamanto Rojo',
+  arrocito: 'Arroz Blanco'
+}
+
 export async function listarIngredientes() {
     return new Promise((resolve) => {
         setTimeout(() => {
             resolve(INGREDIENTES.map((item) => ({ ...item })))
         }, 150)
+    })
+}
+
+export async function listarEquivalencias() {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+           resolve({ ...EQUIVALENCIAS}) 
+        }, 120);
     })
 }
