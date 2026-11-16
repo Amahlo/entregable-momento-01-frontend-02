@@ -1,0 +1,129 @@
+.despensa-lista-seccion {
+  padding: 1.25rem;
+  border-radius: 1.15rem;
+  border: 1px solid rgba(61, 142, 51, 0.22);
+  background-color: #ffffff;
+}
+
+.dark .despensa-lista-seccion {
+  background-color: var(--sazon-verdeNutresaCard);
+  border-color: rgba(102, 209, 73, 0.25);
+}
+
+.despensa-lista-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.despensa-lista-titulo {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--sazon-verdeNutresa);
+}
+
+.dark .despensa-lista-titulo {
+  color: var(--sazon-marfil);
+}
+
+.despensa-lista-contador {
+  padding: 0.2rem 0.65rem;
+  border-radius: 9999px;
+  background-color: rgba(61, 142, 51, 0.12);
+  color: var(--sazon-verdeHondo);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.72rem;
+  font-weight: 600;
+}
+
+.dark .despensa-lista-contador {
+  background-color: rgba(102, 209, 73, 0.18);
+  color: var(--sazon-verdeNeon);
+}
+
+.despensa-chips-contenedor {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.despensa-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.45rem 0.85rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(61, 142, 51, 0.35);
+  background-color: var(--sazon-marfil);
+  color: var(--sazon-texto);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.82rem;
+  animation: despensaChipEntrada 0.18s ease-out;
+}
+
+.dark .despensa-chip {
+  background-color: var(--sazon-verdeNutresa);
+  border-color: rgba(102, 209, 73, 0.4);
+  color: var(--sazon-marfil);
+}
+
+.despensa-chip-icono {
+  color: var(--sazon-verdeHoja);
+  font-size: 0.9rem;
+}
+
+.dark .despensa-chip-icono {
+  color: var(--sazon-verdeNeon);
+}
+
+.despensa-chip-nombre {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+}
+
+.despensa-chip-categoria {
+  padding-left: 0.45rem;
+  border-left: 1px solid rgba(61, 142, 51, 0.28);
+  font-size: 0.72rem;
+  color: var(--sazon-texto2);
+}
+
+.dark .despensa-chip-categoria {
+  border-left-color: rgba(102, 209, 73, 0.3);
+  color: rgba(244, 244, 232, 0.72);
+}
+
+.despensa-lista-estado {
+  margin: 0;
+  padding: 0.75rem 0;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  color: var(--sazon-texto2);
+}
+
+.dark .despensa-lista-estado {
+  color: rgba(244, 244, 232, 0.75);
+}
+
+.despensa-lista-error {
+  color: #dc2626;
+}
+
+@keyframes despensaChipEntrada {
+  from {
+    opacity: 0;
+    transform: scale(0.94);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
