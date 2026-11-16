@@ -1,15 +1,15 @@
-import { useState } from "react"
+import { useDespensa } from "../hooks/useDespensa"
 import BuscadorIngredientes from "./BuscadorIngredientes"
+import ListaDespensa from "./ListaDespensa"
 
-function DespensaView() {
-    const [ultimoSeleccionado, setUltimoSeleccionado] = useState(null)
-
-    const handleSeleccionarIngrediente = (ingrediente) => {
-        setUltimoSeleccionado(ingrediente)
-        if (typeof window !== "undefined" && typeof window.showToast === "function") {
-            window.showToast(`Ingrediente seleccionado: ${ingrediente.nombre}`)
-        }
-    }
+const DespensaView = () => {
+    const {
+        ingredientes,
+        cargando,
+        guardando,
+        error,
+        agregarIngrediente,
+    } = useDespensa()
 
     return (
         <section className="space-y-6">
@@ -22,33 +22,21 @@ function DespensaView() {
                     Gestión de Ingredientes en el Hogar
                 </h2>
                 <p className="font-inter text-xs sm:text-sm text-slate-600 dark:text-slate-300 m-0">
-                    Busca y selecciona ingredientes del catálogo para incorporarlos a tu inventario.
+                   Busca y selecciona ingredientes del catálogo para incorporarlos a tu inventario 
                 </p>
             </header>
 
-            <BuscadorIngredientes onSeleccionarIngrediente={handleSeleccionarIngrediente} />
+            <BuscadorIngredientes 
+                onSeleccionarIngrediente={agregarIngrediente}
+                guardando={guardando}
+            />
 
-            {ultimoSeleccionado && (
-                <aside
-                    className="p-4 rounded-2xl bg-white dark:bg-sazon-verdeNutresaCard border border-sazon-verdeHoja/30 flex items-center justify-between max-w-xl shadow-xs"
-                    aria-live="polite"                    
-                >
-                    <div>
-                        <span className="text-[11px] font-mono-tag uppercase text-sazon-verdeHoja dark:text-sazon-verdeNeon block">
-                            Último ingrediente capturado
-                        </span>
-                        <strong className="font-poppins text-sm text-slate-900 dark:text-white">
-                            {ultimoSeleccionado.nombre}
-                        </strong>
-                        <span className="text-xs text-slate-500 dark:text-slate-400 block">
-                            {ultimoSeleccionado.categoria} · {ultimoSeleccionado.marca}
-                        </span>
-                    </div>
-                    <i className="bi bi-check-circle-fill text-sazon-verdeHoja dark:text-sazon-verdeNeon text-xl"></i>
-                </aside>
-            )}
+            <ListaDespensa 
+                ingredientes={ingredientes}
+                cargando={cargando}
+                error={error}
+            />
         </section>
     )
 }
-
 export default DespensaView
