@@ -200,3 +200,20 @@
 .dark .despensa-buscador-estado {
   color: rgba(244, 244, 232, 0.75);
 }
+
+.despensa-buscador-equivalencia {
+  display: inline-block;
+  margin: 0.2rem 0;
+  padding: 0.1rem 0.5rem;
+  border-radius: 9999px;
+  background-color: rgba(61, 142, 51, 0.12);
+  color: var(--sazon-verdeHondo);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.68rem;
+  font-weight: 600;
+}
+
+.dark .despensa-buscador-equivalencia {
+  background-color: rgba(102, 209, 73, 0.18);
+  color: var(--sazon-verdeNeon);
+}

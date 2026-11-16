@@ -19,11 +19,18 @@ function BuscadorIngredientes({ onSeleccionarIngrediente, guardando = false }) {
     setListaAbierta(true)
   }
 
-  const handleSeleccion = async (ingrediente) => {
+  const handleSeleccion = async (sugerencia) => {
     if (guardando) return
 
+    const ingredienteOficial = {
+      id: sugerencia.id,
+      nombre: sugerencia.nombre,
+      categoria: sugerencia.categoria,
+      marca: sugerencia.marca
+    }
+
     if (typeof onSeleccionarIngrediente === 'function') {
-      const resultado = await onSeleccionarIngrediente(ingrediente)
+      const resultado = await onSeleccionarIngrediente(ingredienteOficial)
       if (resultado && resultado.ok === false) {
         return
       }
@@ -117,6 +124,13 @@ function BuscadorIngredientes({ onSeleccionarIngrediente, guardando = false }) {
                     <span className="despensa-buscador-item-nombre">
                       {ingrediente.nombre}
                     </span>
+
+                    {ingrediente.equivalenciaAplicada && (
+                      <span className="despensa-buscador-equivalencia">
+                        Equivalencia de «{ingrediente.equivalenciaAplicada}»
+                      </span>
+
+                    )}
                     <span className="despensa-buscador-item-categoria">
                       {ingrediente.categoria}
                     </span>
