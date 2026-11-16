@@ -85,7 +85,7 @@ function BuscadorIngredientes ({ onSeleccionarIngrediente }) {
                         </li>
                     )}
 
-                    {!cargando && error (
+                    {!cargando && error &&(
                         <li className="despensa-buscador-estado" role="alert">
                             {error}
                         </li>
