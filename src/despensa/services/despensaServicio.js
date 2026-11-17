@@ -67,3 +67,33 @@ export async function agregarIngredienteDespensa(ingrediente) {
         }, 120)
     })
 }
+
+export async function eliminarIngredienteDespensa(id) {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            if (typeof id === "undefined" || id === null) {
+                reject(new Error("Identificador de ingrediente inválido para eliminar"))
+                return
+            }
+
+            const listaActual = leerStorage()
+            const ingredienteEliminado = listaActual.find((item) => item.id === id) || null
+            const nuevaLista = listaActual.filter((item) => item.id !== id)
+
+            guardarStorage(nuevaLista)
+            resolve({
+                eliminado: Boolean(ingredienteEliminado),
+                ingrediente: ingredienteEliminado
+            })
+        }, 100)
+    })
+}
+
+export async function vaciarDespensa() {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            guardarStorage([])
+            resolve({ vaciada: true})
+        }, 100)
+    })
+}
