@@ -9,6 +9,8 @@ const DespensaView = () => {
         guardando,
         error,
         agregarIngrediente,
+        eliminarIngrediente,
+        vaciarTodo
     } = useDespensa()
 
     return (
@@ -34,7 +36,10 @@ const DespensaView = () => {
             <ListaDespensa 
                 ingredientes={ingredientes}
                 cargando={cargando}
+                guardando={guardando}
                 error={error}
+                onEliminarIngrediente={eliminarIngrediente}
+                onVaciarDespensa={vaciarTodo}
             />
         </section>
     )
